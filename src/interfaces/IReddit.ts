@@ -1,24 +1,3 @@
-<h2>Motivation</h2>
-<p>
-Suppose that you consume a json from the web, this json may be complex, and you need to access info , e.g., titles from Reddit. Wouldn't it be less error-prone to get an interface representing this json and access data via the interface, and get free IntelliSense?
-</p>
-<p>But how to get this interface?</p>
-<p>Yes, you can create this interface manually, but if automatically is possible, why not?</p>
-
-<h2>Installation</h2>
-
-```
-npm i
-```
-
-<h2>Create an interface in a button click</h2>
-<p>
-Insert the URL https://www.reddit.com/r/typescript.json into the browser, get the json, and put it in the window in http://json2ts.com/; click on the button 'generateTypeScript.' The result is the following, with RootObject as the root interface</p>
-<p>You can replace typescript.json with javascript.json in the URL and get javascript-related titles instead of typescript-related titles.</p>
-
-
-
-```ts
 export interface MediaEmbed {}
 
 export interface SecureMediaEmbed {}
@@ -229,28 +208,3 @@ export interface RootObject {
   kind: string;
   data: Data;
 }
-```
-
-<h2>Use the interface for easy IntelliSense</h2>
-
-```ts
-export function printReditDataToConsole() {
-  axios
-    .get(url)
-    .then((res) => {
-      const root: RootObject = res.data;
-      root.data.children.forEach((child) => {
-        console.log(child.data.title);
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}
-```
-
-<h2>Usage</h2>
-
-```
-npm run dev
-```
