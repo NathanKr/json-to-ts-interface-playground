@@ -1,6 +1,6 @@
 <h2>Motivation</h2>
 <p>
-Suppose that you consume a json from the web, this json may be complex, and you need to access info. Wouldn't it be less error-prone to get an interface representing this json and access data via the interface, and get free IntelliSense?
+Suppose that you consume a json from the web, this json may be complex, and you need to access info , e.g., titles from Reddit. Wouldn't it be less error-prone to get an interface representing this json and access data via the interface, and get free IntelliSense?
 </p>
 <p>But how to get this interface?</p>
 <p>Yes, you can create this interface manually, but if automatically is possible, why not?</p>
